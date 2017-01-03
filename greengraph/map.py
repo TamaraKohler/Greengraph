@@ -31,3 +31,6 @@ class Map(object):
         greener_than_blue = self.pixels[:,:,1] > threshold*self.pixels[:,:,2]
         green = np.logical_and(greener_than_red, greener_than_blue) 
         return green
+    
+    def count_green(self, threshold = 1.1):
+        return np.sum(self.green(threshold))
