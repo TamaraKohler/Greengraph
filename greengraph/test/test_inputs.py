@@ -10,11 +10,6 @@ def test_end_type():
     with assert_raises(TypeError):
         assert Greengraph('London','7')
         
-        
-def test_for_false_positive_location_type():
-    with assert_raises(TypeError):
-        assert Greengraph('London', 'Oxford')
-        
 def test_steps_type_1():
     with assert_raises(TypeError):
         assert Greengraph('London', 'Oxford').green_between('green')
@@ -27,10 +22,3 @@ def test_steps_value():
     with assert_raises(ValueError):
         assert Greengraph('London', 'Oxford').green_between('-3')
         
-def test_for_false_positive_steps_type():
-    with assert_raises(TypeError):
-        assert Greengraph('London', 'Oxford').green_between('3')
-        
-def test_for_false_positive_steps_value():
-    with assert_raises(ValueError):
-        assert Greengraph('London', 'Oxford').green_between('3')
