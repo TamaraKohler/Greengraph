@@ -1,3 +1,4 @@
+
 import numpy as np
 import geopy
 from .map import Map
@@ -6,6 +7,10 @@ class Greengraph(object):
     def __init__(self, start, end):
         self.start=start
         self.end=end
+        if is_number(start):
+            raise TypeError("Starting point should be a string (name of location)")
+        if is_number(end):
+            raise TypeError("Ending point should be a string (name of location)")
         self.geocoder=geopy.geocoders.GoogleV3(domain="maps.google.co.uk")
         
     def geolocate(self, place):
