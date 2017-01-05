@@ -34,3 +34,13 @@ def test_pixels():
         expected_pixels = numpy.load(os.path.join(os.path.dirname(__file__),
                                    'fixtures/test_pixels.npy'))
         npt.assert_array_equal(test_map.pixels,expected_pixels)
+
+
+def test_green():
+    mock_image = open(os.path.join(os.path.dirname(__file__),
+                                   'fixtures/london_map.png'), 'rb')
+    with patch('requests.get', return_value=Mock(content=mock_image.read())) as mock_get:
+        test_map = Map(lat, long)
+        expected_answer = numpy.load(os.path.join(os.path.dirname(__file__),
+                                   'fixtures/test_green.npy'))
+        npt.assert_array_equal(test_map.green(1.1),expected_answer)
