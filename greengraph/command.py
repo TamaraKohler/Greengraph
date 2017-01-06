@@ -8,10 +8,10 @@ data = mygraph.green_between(20)
 def process():
     parser = ArgumentParser(description = "Compute the green space between two cities")
     
-    parser.add_argument('--begin', '-b', help = 'The starting location (default New York)')
-    parser.add_argument('--end', '-e', help = 'The end location (default Chicago)')
-    parser.add_argument('--steps', '-s', help = 'The number of steps you would like to use in the calculation (default 20)')
-    parser.add_argument('--out', '-o', help = 'Location to save the graph to (default no file)')
+    parser.add_argument('--begin', '-b', help = 'The starting location (for example London)')
+    parser.add_argument('--end', '-e', help = 'The end location (for example Oxford)')
+    parser.add_argument('--steps', '-s', help = 'The number of steps you would like to use in the calculation (for example 10)')
+    parser.add_argument('--out', '-o', help = 'Location to save the graph to (for example graph.png)')
     
     arguments = parser.parse_args()
     
